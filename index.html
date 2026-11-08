@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- The page has its own dark theme, so browsers mustn't darken it themselves (Chrome on Android's "dark theme for sites"). -->
+    <meta name="color-scheme" content="light dark" />
+    <title>Motif.NET</title>
+    <meta name="description" content="Opinionated, AI-assisted tooling for building .NET apps, from first sketch onwards. Every Motif tool, with a way in, and the ideas still to come." />
+    <!-- Link previews (LinkedIn, Slack and others). The image needs an absolute URL. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Motif.NET" />
+    <meta property="og:title" content="Motif.NET" />
+    <meta property="og:description" content="Opinionated, AI-assisted tooling for building .NET apps, from first sketch onwards." />
+    <meta property="og:url" content="https://motif-dotnet.github.io/" />
+    <meta property="og:image" content="https://motif-dotnet.github.io/social-preview.png" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="640" />
+    <meta property="og:image:alt" content="Motif.NET: opinionated, AI-assisted tooling for building .NET apps, from first sketch onwards." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preload" href="fonts/IBMPlexSans-Regular-Latin1.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="fonts/IBMPlexSans-SemiBold-Latin1.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="css/motif.css" />
+    <link rel="stylesheet" href="css/site.css" />
+    <script>
+        // Apply a remembered theme before the first paint, so dark-mode users don't see a flash.
+        // "motif-theme" is shared with every Motif tool on motif-dotnet.github.io.
+        try {
+            const t = localStorage.getItem("motif-theme");
+            if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+        } catch { }
+    </script>
+    <script src="js/site.js" defer></script>
+</head>
+
+<body>
+    <header class="appbar">
+        <a class="brand" href="./" aria-label="Motif.NET home">
+            <svg class="mark" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.9" y="15.74" width="5.36" height="5.36" rx="0.96" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="8.42" y="8.42" width="7.16" height="7.16" rx="1.86" fill="currentColor"/><rect x="14.84" y="2" width="7.16" height="7.16" rx="1.86" fill="var(--accent)"/></svg>
+            <span class="word"><b>Motif</b><span class="net">.NET</span></span>
+        </a>
+        <span class="spacer"></span>
+        <a class="cmd" href="https://github.com/motif-dotnet/.github/discussions"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v10H9l-5 4z"/></svg><span class="wide">Discussions</span></a>
+        <a class="cmd" href="https://github.com/motif-dotnet"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5M15 21v-3.5a3 3 0 00-.9-2.4c3-.3 6-1.4 6-6.6a5 5 0 00-1.4-3.6 4.7 4.7 0 00-.1-3.5s-1.1-.3-3.6 1.4a12.3 12.3 0 00-6.4 0C6.1 1.1 5 1.4 5 1.4a4.7 4.7 0 00-.1 3.5A5 5 0 003.5 8.5c0 5.2 3 6.3 6 6.6a3 3 0 00-.9 2.4V21"/></svg><span class="wide">GitHub</span></a>
+        <div class="menu" id="theme-menu">
+            <button class="cmd icon" title="Theme" aria-haspopup="menu" aria-expanded="false" id="theme-button"></button>
+            <div class="menu-list narrow" role="menu">
+                <button role="menuitemradio" data-theme-choice="system" aria-checked="true"></button>
+                <button role="menuitemradio" data-theme-choice="light" aria-checked="false"></button>
+                <button role="menuitemradio" data-theme-choice="dark" aria-checked="false"></button>
+                <div class="note">Remembered in this browser only.</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Opinionated, AI-assisted tooling for building .NET apps, from first sketch onwards.</h1>
+            <p>Motif.NET is a suite of tools and conventions for building .NET apps with a coding agent. Each one does one job well, and they work together through files in the app's repo, so a design you sketch can become a plan that a coding agent builds from.</p>
+            <p class="muted">Using them is optional: pick the ones you want, and none of them gets in your way by default. The tools run in the browser, with no server and no accounts.</p>
+        </section>
+
+        <section aria-labelledby="tools">
+            <h2 id="tools">Tools</h2>
+            <div class="tools">
+                <article class="card tool">
+                    <div class="top">
+                        <h3><span class="motif">Motif</span> Sketch</h3>
+                        <span class="pill">Built</span>
+                    </div>
+                    <p>Sketch a system context diagram and a ports-and-adapters design, then export SVG pictures and a Markdown solution plan a coding agent can build stubs from.</p>
+                    <div class="row wrap">
+                        <a class="primary" href="https://motif-dotnet.github.io/Motif.Sketch/">Open Motif Sketch</a>
+                        <a class="ghost" href="https://github.com/motif-dotnet/Motif.Sketch">Repo</a>
+                    </div>
+                </article>
+                <article class="card tool">
+                    <div class="top">
+                        <h3><span class="motif">Motif</span> Glossary</h3>
+                        <span class="pill">Trial</span>
+                    </div>
+                    <p>See a project's glossary, <code>motif/glossary.md</code>, at a glance: terms grouped by kind, proposed terms picked out for review, and gentle notes where it drifts from the format or the sketch.</p>
+                    <div class="row wrap">
+                        <a class="primary" href="https://motif-dotnet.github.io/Motif.Glossary/">Open Motif Glossary</a>
+                        <a class="ghost" href="https://github.com/motif-dotnet/Motif.Glossary">Repo</a>
+                    </div>
+                </article>
+            </div>
+            <p class="legend"><b>Built:</b> ready to use. <b>Trial:</b> in use on Motif's own repos, still changing.</p>
+        </section>
+
+        <section aria-labelledby="later">
+            <h2 id="later">Coming later</h2>
+            <p class="muted">Ideas, written up but not built yet. Expect some to change, merge or drop out.</p>
+            <ul class="ideas">
+                <li><b>Motif CLI</b> <code>dotnet motif</code>: sets up the <code>motif/</code> folder in a repo, and runs gentle checks.</li>
+                <li><b>Glossary checks</b>: flag words to avoid, terms still proposed, and sketch names with no glossary entry.</li>
+                <li><b>Glossary editor</b>: browse and edit <code>motif/glossary.md</code>, growing out of Motif Glossary.</li>
+                <li><b>Agent review</b>: a review prompt that checks a change against Motif's opinions on architecture, naming and style, and gives advice only.</li>
+            </ul>
+            <p><a href="https://github.com/motif-dotnet/.github/blob/main/design/ideas.md">All the ideas being explored</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Motif.NET is how I'm finding my way in AI-assisted development, so expect ideas, trials and changes of mind. Say hello or share ideas in <a href="https://github.com/motif-dotnet/.github/discussions">Discussions</a>.</p>
+        <p class="muted">Open source under the MIT License, on <a href="https://github.com/motif-dotnet">GitHub</a>.</p>
+    </footer>
+</body>
+
+</html>

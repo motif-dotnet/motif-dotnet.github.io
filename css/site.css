@@ -1,0 +1,43 @@
+/* The landing page: a page that scrolls, rather than an app that fills the window. Only what's
+   specific to this page; the look comes from motif.css, which the sync script copies in. */
+
+html, body { height: auto; min-height: 100%; overflow: auto; }
+body { font-size: 15px; line-height: 1.55; background: var(--chrome); }
+
+.appbar { position: sticky; top: 0; z-index: 20; }
+.appbar a.cmd { text-decoration: none; }
+a.brand { text-decoration: none; }
+.brand .word b { font-weight: 600; }
+.brand .net { color: var(--muted); }
+
+main, footer { width: min(880px, 100% - 32px); margin: 0 auto; }
+
+.hero { padding: 56px 0 24px; }
+.hero h1 { margin: 0 0 18px; color: var(--ink); font-size: 32px; line-height: 1.2; font-weight: 600; letter-spacing: -.015em; max-width: 24em; }
+.hero p { margin: 0 0 12px; max-width: 42em; }
+
+h2 { margin: 36px 0 14px; color: var(--ink); font-size: 18px; font-weight: 600; }
+section > p { margin: 0 0 12px; }
+
+.tools { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.tool { display: flex; flex-direction: column; gap: 10px; padding: 18px; box-shadow: none; }
+.tool .top { display: flex; align-items: center; gap: 10px; }
+.tool h3 { flex: 1; margin: 0; color: var(--ink); font-size: 18px; font-weight: 600; letter-spacing: -.01em; }
+.tool h3 .motif { color: var(--muted); font-weight: 400; }
+.tool p { margin: 0; flex: 1; }
+.tool a.primary, .tool a.ghost { text-decoration: none; }
+.legend { margin-top: 12px; font-size: 13px; color: var(--muted); }
+.legend b { color: var(--text); font-weight: 600; }
+
+.ideas { margin: 0 0 12px; padding: 0; list-style: none; display: grid; gap: 8px; }
+.ideas li { padding: 10px 14px; border: 1px dashed var(--line-strong); border-radius: 8px; }
+.ideas b { color: var(--ink); font-weight: 600; }
+
+footer { margin-top: 48px; padding: 20px 0 40px; border-top: 1px solid var(--line); font-size: 13px; }
+footer p { margin: 0 0 6px; }
+
+@media (max-width: 599px) {
+  .hero { padding-top: 32px; }
+  .hero h1 { font-size: 25px; }
+  .tools { grid-template-columns: 1fr; }
+}
