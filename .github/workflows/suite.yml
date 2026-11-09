@@ -1,5 +1,6 @@
-# Reports when this site's copy of the Motif web kit (motif-dotnet/.github brand/web) has drifted.
-# It never blocks a deploy: a red run means "run scripts/sync-suite.sh and commit".
+# Keeps this site's copy of the Motif web kit (motif-dotnet/.github brand/web) up to date.
+# Every day, and when run by hand, it syncs the kit and commits any change straight to main.
+# On pushes and pull requests it only checks, and goes red when the copy has drifted. It never blocks a deploy.
 name: Motif web kit
 
 on:
@@ -7,7 +8,7 @@ on:
     branches: [main]
   pull_request:
   schedule:
-    - cron: "0 6 * * 1"
+    - cron: "0 6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -15,8 +16,30 @@ permissions:
 
 jobs:
   check:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Check the kit is up to date
         run: bash scripts/sync-suite.sh --check
+
+  sync:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Sync the kit
+        run: bash scripts/sync-suite.sh
+      - name: Commit any change to main
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then echo "Already up to date."; exit 0; fi
+          kit=$(git ls-remote https://github.com/motif-dotnet/.github.git refs/heads/main | cut -c1-7)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Sync the Motif web kit" -m "From motif-dotnet/.github $kit, by the daily kit sync."
+          git push origin HEAD:main

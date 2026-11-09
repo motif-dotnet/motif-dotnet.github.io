@@ -17,6 +17,6 @@ A new tool goes in two lists: `Tools.All` in the kit's [Suite/Tools.cs](https://
 
 ## The kit
 
-`bash scripts/sync-suite.sh` copies the kit's stylesheet and fonts in (`--from ../path/to/.github` for a local clone). [.github/workflows/suite.yml](.github/workflows/suite.yml) runs it with `--check` on every push and weekly, and goes red when this copy has drifted.
+`bash scripts/sync-suite.sh` copies the kit's stylesheet and fonts in (`--from ../path/to/.github` for a local clone). [.github/workflows/suite.yml](.github/workflows/suite.yml) runs it every day and commits any change to `main`, and on every push runs it with `--check`, going red when this copy has drifted.
 
 To try the page locally, serve the folder with any static server, for example `npx http-server -c-1`.
