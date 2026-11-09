@@ -55,14 +55,8 @@
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h1>Opinionated, agent-assisted tooling for building .NET apps, from first sketch onwards.</h1>
-            <p>Motif.NET is a suite of tools and conventions for building .NET apps with a coding agent. Each one does one job well, and they work together through files in the app's repo, so a design you sketch can become a plan that a coding agent builds from.</p>
-            <p class="muted">Using them is optional: pick the ones you want, and none of them gets in your way by default. The tools run in the browser, with no server and no accounts.</p>
-        </section>
-
-        <section aria-labelledby="tools">
+    <div class="layout">
+        <aside class="panel panel-tools" aria-labelledby="tools">
             <h2 id="tools">Tools</h2>
             <div class="tools">
                 <article class="card tool">
@@ -89,20 +83,36 @@
                 </article>
             </div>
             <p class="legend"><b>Built:</b> ready to use. <b>Trial:</b> in use on Motif's own repos, still changing.</p>
-        </section>
+        </aside>
 
-        <section aria-labelledby="later">
+        <main>
+            <div class="banner">
+                <div class="lockup">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.9" y="15.74" width="5.36" height="5.36" rx="0.96" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="8.42" y="8.42" width="7.16" height="7.16" rx="1.86" fill="currentColor"/><rect x="14.84" y="2" width="7.16" height="7.16" rx="1.86" fill="var(--accent)"/></svg>
+                    <span class="word"><b>Motif</b><span class="net">.NET</span></span>
+                </div>
+                <p class="tag">Tools and conventions for .NET apps</p>
+            </div>
+
+            <section class="hero">
+                <h1>Opinionated, agent-assisted tooling for building .NET apps, from first sketch onwards.</h1>
+                <p>Motif.NET is a suite of tools and conventions for building .NET apps with a coding agent. Each one does one job well, and they work together through files in the app's repo, so a design you sketch can become a plan that a coding agent builds from.</p>
+                <p class="muted">Using them is optional: pick the ones you want, and none of them gets in your way by default. The tools run in the browser, with no server and no accounts.</p>
+            </section>
+        </main>
+
+        <aside class="panel panel-later" aria-labelledby="later">
             <h2 id="later">Coming later</h2>
             <p class="muted">Ideas, written up but not built yet. Expect some to change, merge or drop out.</p>
             <ul class="ideas">
-                <li><b>Motif CLI</b> <code>dotnet motif</code>: sets up the <code>motif/</code> folder in a repo, and runs gentle checks.</li>
-                <li><b>Glossary checks</b>: flag words to avoid, terms still proposed, and sketch names with no glossary entry.</li>
-                <li><b>Glossary editor</b>: browse and edit <code>motif/glossary.md</code>, growing out of Motif Glossary.</li>
-                <li><b>Agent review</b>: a review prompt that checks a change against Motif's opinions on architecture, naming and style, and gives advice only.</li>
+                <li><b>Motif CLI</b> <code>dotnet motif</code> sets up the <code>motif/</code> folder in a repo, and runs gentle checks.</li>
+                <li><b>Glossary checks</b> Flag words to avoid, terms still proposed, and sketch names with no glossary entry.</li>
+                <li><b>Glossary editor</b> Browse and edit <code>motif/glossary.md</code>, growing out of Motif Glossary.</li>
+                <li><b>Agent review</b> A review prompt that checks a change against Motif's opinions on architecture, naming and style, and gives advice only.</li>
             </ul>
-            <p><a href="https://github.com/motif-dotnet/.github/blob/main/design/ideas.md">All the ideas being explored</a></p>
-        </section>
-    </main>
+            <p class="more"><a href="https://github.com/motif-dotnet/.github/blob/main/design/ideas.md">All the ideas being explored</a></p>
+        </aside>
+    </div>
 
     <footer>
         <p>Motif.NET is how I'm finding my way in agent-assisted development, so expect ideas, trials and changes of mind. Say hello or share ideas in <a href="https://github.com/motif-dotnet/.github/discussions">Discussions</a>.</p>
