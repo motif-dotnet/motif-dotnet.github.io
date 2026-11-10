@@ -28,6 +28,13 @@ a.brand { text-decoration: none; }
 .banner .lockup .net { color: var(--muted); }
 .banner .tag { margin: 0; color: var(--muted); font-size: 14px; letter-spacing: .02em; }
 
+/* What's new: one line under the banner. */
+.news { margin: 16px 0 0; text-align: center; }
+.news a { display: inline-flex; align-items: center; gap: 8px; max-width: 100%; padding: 6px 14px 6px 6px; border: 1px solid var(--line-strong); border-radius: 18px; background: var(--bar); color: var(--text); font-size: 14px; line-height: 1.4; text-align: left; text-decoration: none; }
+.news a:hover { background: var(--hover); color: var(--ink); }
+.news b { color: var(--ink); font-weight: 600; }
+.news-tag { flex: none; padding: 2px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 12px; font-weight: 600; }
+
 .hero { padding: 36px 0 8px; text-align: center; }
 .hero h1 { margin: 0 auto 18px; color: var(--ink); font-size: 32px; line-height: 1.2; font-weight: 600; letter-spacing: -.015em; max-width: 24em; }
 .hero p { margin: 0 auto 12px; max-width: 42em; }
