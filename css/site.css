@@ -49,6 +49,8 @@ a.brand { text-decoration: none; }
 .tool h3 .motif { color: var(--muted); font-weight: 400; }
 .tool p { margin: 0; flex: 1; }
 .tool a.primary, .tool a.ghost { text-decoration: none; }
+/* Libraries: a group of their own under the tools, named as you'd type them (Motif.Is). */
+.panel-tools .group { margin: 18px 0 8px; color: var(--muted); font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
 .panel .legend { margin: 14px 0 0; font-size: 12px; color: var(--muted); }
 .legend b { color: var(--text); font-weight: 600; }
 
