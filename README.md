@@ -17,6 +17,12 @@ A new tool goes in two lists: `Tools.All` in the kit's [Suite/Tools.cs](https://
 
 A library, such as [Motif.Is](https://github.com/motif-dotnet/Motif.Is), goes in index.html only, in the Libraries group under the tools. The switcher links to things you can open, and a library has nothing to open, so its card has a **Get it on NuGet** button instead of **Open**, greyed out until the package is published. If a library later gets a page of its own (for Motif.Is, [Motif.Is#6](https://github.com/motif-dotnet/Motif.Is/issues/6)), it joins the switcher like the apps.
 
+## Visit counts
+
+Every Motif.NET site counts visits with [GoatCounter](https://www.goatcounter.com), with no cookies, into one dashboard at <https://motif-dotnet.goatcounter.com>, where each site shows up as its path (`/`, `/Motif.Sketch/` and so on). The script tag is in this page and in each app's `wwwroot/index.html`, pinned to one version of GoatCounter's script with an integrity hash; keep the tags the same. It sends the page's path, referrer and title and the screen size, never anything after the `#`, so Sketch's share links and `#repo=` stay private. Each site's about or help text says visits are counted.
+
+Visits from `localhost` aren't counted. To stop counting your own visits to the live sites, open <https://motif-dotnet.github.io/#toggle-goatcounter> once in each browser you use; it covers every site, and opening it again turns counting back on.
+
 ## The kit
 
 `bash scripts/sync-suite.sh` copies the kit's stylesheet and fonts in (`--from ../path/to/.github` for a local clone). [.github/workflows/suite.yml](.github/workflows/suite.yml) runs it every day and commits any change to `main`, and on every push runs it with `--check`, going red when this copy has drifted.
