@@ -13,7 +13,7 @@ It's one static page, served by GitHub Pages from `main`, with no build step:
 
 ## Adding a tool
 
-A new tool goes in two lists: `Tools.All` in the kit's [Suite/Tools.cs](https://github.com/motif-dotnet/.github/blob/main/brand/web/Suite/Tools.cs), for the tools' switchers, and the Tools section of [index.html](index.html), which also shows its status. Keep the tool's line the same in both, and move it out of "Coming later" if it was there.
+A new tool goes in two lists: `Tools.All` in the kit's [Suite/Tools.cs](https://github.com/motif-dotnet/.github/blob/main/brand/web/Suite/Tools.cs), for the tools' switchers, and the Tools section of [index.html](index.html), which also shows its status. The two lines differ on purpose: the card's description follows the repo's description on GitHub, and the switcher's line is a short form of it, to fit the menu. Change both when either changes, and move the tool out of "Coming later" if it was there.
 
 A library, such as [Motif.Is](https://github.com/motif-dotnet/Motif.Is), goes in index.html only, in the Libraries group under the tools. The switcher links to things you can open, and a library has nothing to open, so its card has a **Get it on NuGet** button instead of **Open**, greyed out until the package is published. If a library later gets a page of its own (for Motif.Is, [Motif.Is#6](https://github.com/motif-dotnet/Motif.Is/issues/6)), it joins the switcher like the apps.
 
